@@ -1,0 +1,526 @@
+/* Reset dan base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Navbar styles */
+/* nav {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+} */
+
+nav {
+    background-color: rgba(255, 255, 255, 0.8); /* Warna putih dengan transparansi */
+    backdrop-filter: blur(10px); /* Efek blur */
+    -webkit-backdrop-filter: blur(10px); /* Untuk kompatibilitas dengan browser berbasis WebKit */
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.10);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+nav .icon-all {
+    display: flex;
+    color: #0077B6;
+}
+
+nav .icon-all h1 {
+    font-size: 20px;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav div img {
+    width: 50px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: "Segoe UI", sans-serif;
+    color: #191919;
+    font-weight: 800;
+    padding: 8px 0;
+    transition: all;
+    transition-duration: 300ms;
+    border-bottom: 1px solid rgba(255, 68, 0, 0);
+}
+
+nav ul li a:hover {
+    color: #0077B6;
+    border-bottom: 1px solid #0077B6;
+}
+
+.menu-icon {
+    font-size: 32px;
+    display: none;
+    color: #0D1B2A;
+    transition: all;
+    transition-duration: 300ms;
+}
+
+.menu-icon:hover {
+    color: #0077B6;
+}
+
+
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 1.5rem;
+    z-index: 0;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.description {
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+/* Calculator card styles */
+.calculator-card {
+    background-color: #f0f7ff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Gender Selection Styles */
+.radio-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+.radio-group .gender-p,
+.radio-group .gender-w {
+    display: flex;
+    align-items: center;
+    background-color: #ffff;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 150px;
+    max-width: 100%;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.radio-group .gender-p {
+    color: #0088cc;
+}
+
+.radio-group .gender-w {
+    color: #ff4081;
+}
+
+.radio-group .gender-p:hover,
+.radio-group .gender-w:hover {
+    transform: translateY(-2px);
+    background-color: #ffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.radio-group .gender-p label,
+.radio-group .gender-w label {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 0.5rem;
+    align-content: center;
+}
+
+/* Input Styles */
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.edit-icon {
+    position: absolute;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url('edit-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.input-with-icon input::placeholder {
+    opacity: 0.5;  /* Mengatur tingkat transparansi (0.0 - 1.0) */
+    color: #666;   /* Warna teks placeholder */
+    font-size: 14px; /* Ukuran teks */
+}
+
+/* Button styles */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    display: flex;
+    background-color: #0088cc;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary {
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-download {
+    display: flex;
+    justify-content: center;
+    background-color: #5bc0de;
+    color: white;
+    width: 100%;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, 
+.btn-secondary:hover, 
+.btn-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Result card styles */
+.result-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.result-card h2 {
+    margin-bottom: 1.5rem;
+}
+
+.bmi-result {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.bmi-score {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    margin: 1rem 0;
+}
+
+.bmi-description {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.bmi-explanation {
+    color: #666;
+}
+
+.bmi-explanation p {
+    margin-bottom: 1rem;
+}
+
+/* Rekomendasi Section */
+.recommendation {
+    color: #4a5568;
+    margin-bottom: 1rem;
+}
+
+.hiddenRecomendation {
+    display: none;
+}
+
+.recommendation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.recommendation-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.recommendation-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.recommendation-content {
+    padding: 1rem;
+}
+
+.recommendation-content h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    
+}
+
+.recommendation-content h3 a {
+    font-style: none;
+    text-decoration: none;
+    color: #333;
+}
+
+.recommendation-content p {
+    font-size: 0.875rem;
+    color: #4a5568;
+}
+
+/* Disclaimer */
+
+ .disclaimer {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #0088cc;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #f0f7ff;
+    border-radius: 0.25rem;
+    border: 1px solid #0088cc;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #f8f9fa;
+    padding: 3rem 0 1rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section {
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    color: #0077B6;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-section p {
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #6c757d;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #0077B6;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    color: #6c757d;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #0077B6;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.footer-bottom p {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+
+
+/* Responsive design */
+@media only screen and (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1;
+        padding: 1rem 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        column-gap: 40px;
+        /* background-color: grey; */
+    }
+
+    nav ul li:last-of-type {
+        padding-bottom: 8px;
+    }
+
+    nav ul.hidden {
+        display: none;
+    }
+
+    .menu-icon {
+        display: flex;
+        align-items: center;
+    }
+
+    .container {
+        padding: 1rem;
+        padding-top: 6rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .radio-group {
+        gap: 0.5rem;
+    }
+
+    .radio-group .gender-p,
+    .radio-group .gender-w {
+        padding: 0.75rem 1.5rem;
+        width: 100%;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-section {
+        margin-bottom: 1.5rem;
+    }
+}

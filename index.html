@@ -1,11 +1,214 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="asset/foto/favicon.png">
+    <title>Kalkulator BMI - Mini Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
-    
+    <nav>
+      <div class="icon-all" href="#">
+        <!-- <img src="asset/foto/fotoprofil.png" alt="my-mini-project" /> -->
+        <svg class="calculator" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-calculator-fill" viewBox="0 0 16 16">
+        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm2 .5v2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5m0 4v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 12.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M7.5 6a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM7 9.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m.5 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM10 6.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m.5 2.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5z"/>
+      </svg>
+      <h1>BMI Calculator</h1>
+      </div>
+      <div id="menu-icon" class="menu-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+        </svg>
+        <!-- <i class="ph-fill ph-list"></i> -->
+      </div>
+      <ul id="menu-list" class="hidden">
+        <li>
+          <a href="#container">Home</a>
+        </li>
+        <li>
+          <a href="https://github.com/revou-fundamental-course/25-nov-24-Williard09">My Project</a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/williardxeno/profilecard/?igsh=ajlmMzRkcW1rbG0x">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="container" id="container">
+        <h1 class="title">Kalkulator BMI</h1>
+        
+        <p class="description">
+            Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di kalkulator BMI.
+        </p>
+
+        <div class="calculator-card">
+            <form id="bmiForm">
+              <!-- Form group untuk jenis kelamin -->
+              <div class="form-group">
+                <label>Jenis Kelamin</label>
+                <div class="radio-group">
+                  <label class="gender-p">
+                    <input type="radio" name="gender" value="pria" checked>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gender-male" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M9.5 2a.5.5 0 0 1 0-1h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.707L9.871 6.836a5 5 0 1 1-.707-.707L13.293 2zM6 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8"/>
+                    </svg>
+                    <span>Pria</span>
+                  </label>
+                  <label class="gender-w">
+                    <input type="radio" name="gender" value="wanita">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gender-female" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M8 1a4 4 0 1 0 0 8 4 4 0 0 0 0-8M3 5a5 5 0 1 1 5.5 4.975V12h2a.5.5 0 0 1 0 1h-2v2.5a.5.5 0 0 1-1 0V13h-2a.5.5 0 0 1 0-1h2V9.975A5 5 0 0 1 3 5"/>
+                    </svg>
+                    <span>Wanita
+                    </span>
+                  </label>
+                </div>
+              </div>
+                
+
+                <div class="form-group">
+                    <label for="berat">Berat Badan (kg)</label>
+                    <div class="input-with-icon">
+                        <input type="number" id="berat" name="berat" placeholder="Masukan berat badan dalam (kilogram)" required>
+                        <i class="edit-icon"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="usia">Usia (tahun)</label>
+                    <div class="input-with-icon">
+                        <input type="number" id="usia" name="usia" placeholder="Masukan usia dalam (tahun)" required>
+                        <i class="edit-icon"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tinggi">Tinggi badan (cm)</label>
+                    <div class="input-with-icon">
+                        <input type="number" id="tinggi" name="tinggi" placeholder="Masukan tinggi badan dalam(centi meter)" required>
+                        <i class="edit-icon"></i>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Hitung BMI</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="result-card" style="display: none;" id="print-area">
+            <h2>Hasil</h2>
+            <div class="bmi-result">
+                <!-- Hasil BMI akan diisi oleh JavaScript -->
+            </div>
+            
+            <div class="bmi-explanation">
+                <!-- Penjelasan BMI akan diisi oleh JavaScript -->
+            </div>
+        </div>
+        
+        <!-- Rekomendasi Website -->
+        <div id="recommendationSection" class="recommendation-grid hiddenRecomendation">
+            <!-- Rekomendasi untuk berat badan normal -->
+            <div class="recommendation-card normal-recommendation hiddenRecomendation">
+                <img src="asset/foto/pola-olga-rutin.png" alt="Olahraga">
+                <div class="recommendation-content">
+                    <h3>
+                      <a href="https://www.halodoc.com/artikel/dosis-olahraga-yang-dianjurkan-agar-tetap-sehat">Program Olahraga Rutin</a></h3>
+                    <p>Pertahankan berat badan ideal Anda dengan program olahraga yang teratur</p>
+                </div>
+            </div>
+
+            <div class="recommendation-card normal-recommendation hiddenRecomendation">
+                <img src="asset/foto/buah-halodoc.png" alt="Pola Makan">
+                <div class="recommendation-content">
+                    <h3>
+                      <a href="https://www.halodoc.com/artikel/konsumsi-makanan-bergizi-dan-bernutrisi-untuk-hidup-sehat">Pola Makan Sehat</a></h3>
+                    <p>Tips mempertahankan pola makan sehat dan seimbang</p>
+                </div>
+            </div>
+
+            <!-- Rekomendasi untuk berat badan kurang/berlebih -->
+            <div class="recommendation-card health-recommendation hiddenRecomendation">
+                <img src="asset/foto/asupan-harian.png" alt="Nutrisi">
+                <div class="recommendation-content">
+                    <h3><a href="https://www.alodokter.com/7-makanan-penambah-berat-badan-yang-sehat-dan-nikmat">Panduan Nutrisi</a></h3>
+                    <p>Informasi lengkap tentang kebutuhan nutrisi harian</p>
+                </div>
+            </div>
+
+            <div class="recommendation-card health-recommendation hiddenRecomendation">
+                <img src="asset/foto/konsul-gizi.png" alt="Konsultasi">
+                <div class="recommendation-content">
+                    <h3>
+                      <a href="https://www.alodokter.com/cari-dokter/ahli-gizi">Konsultasi Ahli Gizi</a></h3>
+                    <p>Dapatkan konsultasi personal dengan ahli gizi profesional</p>
+                </div>
+            </div>
+
+            <div class="recommendation-card health-recommendation hiddenRecomendation">
+                <img src="asset/foto/tips-sehat.png" alt="Tips">
+                <div class="recommendation-content">
+                    <h3>
+                      <a href="https://ayosehat.kemkes.go.id/tiga-langkah-mudah-untuk-mewujudkan-berat-badan-yang-ideal">Tips Kesehatan</a></h3>
+                    <p>Kumpulan tips untuk mencapai berat badan ideal</p>
+                </div>
+            </div>
+        </div>
+        <!-- Disklaim -->
+        <div class="disclaimer">
+            <p>Hasil perhitungan BMI ini hanya sebagai referensi dan tidak dapat dijadikan diagnosis medis. 
+               BMI tidak sepenuhnya mewakili diagnosis menyeluruh dari kesehatan tubuh dan risiko penyakit seseorang. 
+               Anda tetap disarankan untuk berkonsultasi dengan dokter atau ahli gizi untuk evaluasi kesehatan yang lebih akurat.</p>
+        </div>
+        
+    </main>
 </body>
+<!-- Footer done-->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>BMI Calculator</h3>
+            <p>Hitung dan pantau Indeks Massa Tubuh Anda untuk hidup lebih sehat.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#container">Home</a></li>
+                <li><a href="https://github.com/revou-fundamental-course/25-nov-24-PutuAgus76">My Project</a></li>
+                <li><a href="https://www.instagram.com/agus_sumesta/">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p>Email: info@bmicalculator.com</p>
+            <p>Phone: +62 8887773456</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 BMI Calculator. All Right Reserved.</p>
+    </div>
+</footer>
+<script src="js/script.js"></script>
 </html>
