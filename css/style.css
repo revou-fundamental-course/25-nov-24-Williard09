@@ -33,7 +33,7 @@ nav {
 
 nav .icon-all {
     display: flex;
-    color: #0077B6;
+    color: #7300b6;
 }
 
 nav .icon-all h1 {
@@ -121,7 +121,7 @@ nav ul li a:hover {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
-    color: #333;
+    color: #db0202;
 }
 
 /* Gender Selection Styles */
